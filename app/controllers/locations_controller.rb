@@ -1,7 +1,8 @@
 class LocationsController < ApplicationController
   
   def index
-    @locations = Location.all
+    name = params[:location_name]
+    @locations = Location.search(name)
     json_response(@locations)
   end
 
