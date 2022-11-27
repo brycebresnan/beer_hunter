@@ -12,12 +12,13 @@ class Seed
         location_name: Faker::Restaurant.name,
         address: Faker::Address.street_address,
         zip: Faker::Address.zip,
-        type: types.sample,
+        category: types.sample,
         overall_rating: Faker::Number.between(from: 1.0, to: 5.0)
       )
-      puts "Location #{i}: Name is #{location.location_name}, type is '#{location.type}', zip is '#{location.zip}'."
+      puts "Location #{i}: Name is #{location.location_name}, category is '#{location.category}', zip is '#{location.zip}'."
     end
   end
 end
+
 Location.destroy_all
 Seed.begin
