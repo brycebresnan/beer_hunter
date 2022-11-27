@@ -31,15 +31,14 @@
 |GET| `localhost:3000/` |`localhost:3000/`| Returns a list of all locations in the database| None required |
 |GET|`localhost:3000/locations`| `localhost:3000/locations`| Returns a list of all locations in the database| None required |
 |GET|`localhost:3000/locations/:id`| `localhost:3000/locations/38`| Returns all information related to location with ID=38| :id - The id of a particular location (required) |
-
-<!-- |GET|`http://localhost:3000/locations/search/:author`| `http://localhost:3000/locations/search/?author=Abraham Lincoln`| Returns all locations in database where author is Abraham Lincoln| :author - An author's name |
-|GET |`http://localhost:3000/locations/search/:content`| `http://localhost:3000/locations/search/?content=Four score...` | Returns location with content "Four score..."| :content - The content of a location |  -->
-
 |GET|`http://localhost:3000/locations/random`|`http://localhost:3000/locations/random`|Returns a random location from the database| None required |
-
 |POST|`http://localhost:3000/locations/`|`http://localhost:3000/locations/?location_name=Rick's Cafe&address=21 Jump Street&zip=999999&category=Bar`|Adds location to database. Location Name: Rick's Cafe Address: 21 Jump Street Zip: 999999 Category: Bar. If POST is succesfull, returns success message.| :location_name - The name of the location (required), :address - The address of a location (required) :zip - The zip code of the location (required), :category - The type of business at the location (required) |
 |PUT/PATCH|`http://localhost:3000/locations/:id`|`http://localhost:3000/locations/38?location_name=Moe's`|Updates the location name for a location with ID=38. If PUT/PATCH is succesfull, displayed JSON success message.| :id - id of the location to update (required), :location_name - The location's name And/or :content - The content of a location And/or :address - The address of a location (required) And/or :zip - The zip code of the location (required), And/or :category - The type of business at the location (required) |
 |DELETE|`http://localhost:3000/locations/:id`|`http://localhost:3000/locations/38`|Deletes the location with ID=38 from database| :id - id of the location to delete |
+
+
+<!-- |GET|`http://localhost:3000/locations/search/:author`| `http://localhost:3000/locations/search/?author=Abraham Lincoln`| Returns all locations in database where author is Abraham Lincoln| :author - An author's name |
+|GET |`http://localhost:3000/locations/search/:content`| `http://localhost:3000/locations/search/?content=Four score...` | Returns location with content "Four score..."| :content - The content of a location |  -->
 
 ## License
 MIT License
