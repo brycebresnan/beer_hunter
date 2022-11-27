@@ -11,18 +11,26 @@ class LocationsController < ApplicationController
   end
 
   def create
-    @location = Location.create(location_params)
-    json_response(@location)
+    @location = Location.create!(location_params)
+    json_response(@location, :created)
   end
 
   def update
     @location = Location.find(params[:id])
-    @location.update(location_params)
+    if @location.update!(location_params)
+      render status: 200, json: {
+        message: "Location updated successfully."
+      }
+    end
   end
 
   def destroy
     @location = Location.find(params[:id])
-    @location.destroy
+    if @location.destroy!
+      render status: 200, json: {
+        message: "Location deleted succesffully."
+      }
+    end
   end
 
   private
