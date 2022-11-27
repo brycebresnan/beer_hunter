@@ -44,6 +44,7 @@ group :development, :test do
   gem 'securerandom'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem 'rswag'
 end
 
 group :development do
