@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
+  post '/api-keys', to: 'api_keys#create'
+  delete '/api-keys', to: 'api_keys#destroy'
+  get '/api-keys', to: 'api_keys#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
+  get '/locations/barcrawl', to: 'locations#crawl'
+  
   resources :locations
 
   # Defines the root path route ("/")
