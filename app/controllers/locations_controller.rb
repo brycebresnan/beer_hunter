@@ -1,9 +1,16 @@
 class LocationsController < ApplicationController
+  include ApiKeyAuthenticatable 
+  prepend_before_action :authenticate_with_api_key!
   
   def index
-    name = params[:location_name]
-    @locations = Location.search(name)
-    json_response(@locations)
+    # if params == nil
+      @locations = Location.all 
+      json_response(@locations)
+    # elsif params[:location_name].present?
+    #   name = params[:location_name]
+    #   @locations = Location.search(name)
+    #   json_response(@locations)
+    # end
   end
 
   def show
