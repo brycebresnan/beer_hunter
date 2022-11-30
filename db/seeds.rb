@@ -7,11 +7,12 @@ class Seed
 
   def generate_locations
     types = ["Brewery", "Bar", "Bottle Shop", "Brew Pub"]
+    zips = [33813]
     20.times do |i|
       location = Location.create!(
         location_name: Faker::Restaurant.name,
         address: Faker::Address.street_address,
-        zip: Faker::Address.zip,
+        zip: zips.sample,
         category: types.sample,
         overall_rating: Faker::Number.between(from: 1.0, to: 5.0)
       )
