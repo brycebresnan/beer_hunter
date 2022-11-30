@@ -10,4 +10,9 @@ class Location < ApplicationRecord
     #Quote.where("author") = quote_author)
     # Quote.all
   end
+
+  def self.barcrawl(zip)
+    bars = Location.where("zip = ?", ("#{zip}"))
+    bars.sample(4)
+  end
 end
